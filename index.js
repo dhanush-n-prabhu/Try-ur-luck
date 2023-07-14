@@ -64,3 +64,25 @@ if(randomNumber1 < randomNumber2){
 if(randomNumber1 == randomNumber2){
     document.querySelector("h1").innerHTML = "Tie"
 }
+
+
+$('body').click(function() {
+    $('#typer').focus();
+    $('#typer').select();
+    
+});
+
+
+$('#typerForm').submit(function() {
+    //alert("submit");
+    setTimeout("$('#typer').focus();", 1000);
+    return false;
+});
+
+$('#typer').bind('keyup', function(e) {
+    var input = $.trim($(this).val());
+    // some lines of code..
+    $('#myInput').text(input);
+    //...
+    //$(this).val('').focus(); // clean up
+});
